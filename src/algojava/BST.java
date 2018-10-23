@@ -1,5 +1,5 @@
 /**
- * Created by Saphi on 16.05.2017.
+ * Created by Simannom on 16.05.2017.
  */
 
 package algojava;
@@ -35,18 +35,18 @@ public class BST <Key extends Comparable<Key>, Value>
         public Key getK() {return key; }
     }
 
-    //размер поддерева этой вершины
+    //Г°Г Г§Г¬ГҐГ° ГЇГ®Г¤Г¤ГҐГ°ГҐГўГ  ГЅГІГ®Г© ГўГҐГ°ГёГЁГ­Г»
     private int size(Node x) {
         if (x == null) return 0;
         else return x.N;
     }
-    //размер поддерева с вершиной в корне, т.е. размер всего дерева
+    //Г°Г Г§Г¬ГҐГ° ГЇГ®Г¤Г¤ГҐГ°ГҐГўГ  Г± ГўГҐГ°ГёГЁГ­Г®Г© Гў ГЄГ®Г°Г­ГҐ, ГІ.ГҐ. Г°Г Г§Г¬ГҐГ° ГўГ±ГҐГЈГ® Г¤ГҐГ°ГҐГўГ 
     public int size() {return size(root);}
 
     public Value get(Key key) { return get(root, key); }
 
-    // Возвращает значение заданного ключа из поддерева x;
-    // Возвращает null если ключа нет в поддереве x.
+    // Г‚Г®Г§ГўГ°Г Г№Г ГҐГІ Г§Г­Г Г·ГҐГ­ГЁГҐ Г§Г Г¤Г Г­Г­Г®ГЈГ® ГЄГ«ГѕГ·Г  ГЁГ§ ГЇГ®Г¤Г¤ГҐГ°ГҐГўГ  x;
+    // Г‚Г®Г§ГўГ°Г Г№Г ГҐГІ null ГҐГ±Г«ГЁ ГЄГ«ГѕГ·Г  Г­ГҐГІ Гў ГЇГ®Г¤Г¤ГҐГ°ГҐГўГҐ x.
     private Value get(Node x, Key key){
         if (x == null) return null;
         int cmp = key.compareTo(x.key);
@@ -57,8 +57,8 @@ public class BST <Key extends Comparable<Key>, Value>
 
     public Node getN(Key key) { return getN(root, key); }
 
-    // Возвращает значение заданного ключа из поддерева x;
-    // Возвращает null если ключа нет в поддереве x.
+    // Г‚Г®Г§ГўГ°Г Г№Г ГҐГІ Г§Г­Г Г·ГҐГ­ГЁГҐ Г§Г Г¤Г Г­Г­Г®ГЈГ® ГЄГ«ГѕГ·Г  ГЁГ§ ГЇГ®Г¤Г¤ГҐГ°ГҐГўГ  x;
+    // Г‚Г®Г§ГўГ°Г Г№Г ГҐГІ null ГҐГ±Г«ГЁ ГЄГ«ГѕГ·Г  Г­ГҐГІ Гў ГЇГ®Г¤Г¤ГҐГ°ГҐГўГҐ x.
     private Node getN(Node x, Key key){
         if (x == null) return null;
         int cmp = key.compareTo(x.key);
@@ -67,7 +67,7 @@ public class BST <Key extends Comparable<Key>, Value>
         else return x;
     }
 
-    // Change key’s value to val if key in subtree rooted at x.
+    // Change keyвЂ™s value to val if key in subtree rooted at x.
     // Otherwise, add new node to subtree associating key with val.
     private Node put(Node x, Key key, Value val){
         if (x == null) return new Node(key, val, 1);
@@ -223,7 +223,7 @@ public class BST <Key extends Comparable<Key>, Value>
     }
 */
 
-// собственно поиск всех ключей между двумя заданными
+// Г±Г®ГЎГ±ГІГўГҐГ­Г­Г® ГЇГ®ГЁГ±ГЄ ГўГ±ГҐГµ ГЄГ«ГѕГ·ГҐГ© Г¬ГҐГ¦Г¤Гі Г¤ГўГіГ¬Гї Г§Г Г¤Г Г­Г­Г»Г¬ГЁ
     public void search(Key key1, Key key2, ArrayList<Node> y){
         if (key1.compareTo(key2)>0){
             Key tmp;
